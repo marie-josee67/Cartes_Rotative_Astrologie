@@ -245,16 +245,18 @@ body {
 }
 
 /* site web  */
-#container { /* le conteneur*/
-    padding:20px;
-    min-height:100vh; /* 100% du conteneur*/
+#container { 
+    height: 100%;
+    width: 100%;
+    /*min-height:100vh; /* 100% du conteneur*/
     display:flex; /*une carte a coter de l'autre*/
     flex-wrap: wrap;/* permet d'adapter à la taille de l'écran seulement si display est flex sinon marche pas*/ 
     justify-content: center;/* alignement horizontal*/
     align-items: center;/* alignement vertical*/
     gap: 10px;/* écart entre card*/
-    /*background: rgba(9, 91, 207, 0.966);/* couleur de fond*/
+    /*border: solid 5px red;*/
 }
+
 .carte{
     width: 250px;
     height: 350px;
@@ -262,29 +264,52 @@ body {
     /*border:5px solid rgb(226, 66, 114);  enlever à la fin*/
     border-radius: 20px;/* arrondi des anglles si 500 % cela fait un rond*/
     overflow: hidden; /* permet de masquer tout ce qui "déborde" de la carte */
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; /* ombre portée sur la carte */
+    background:rgba(128, 128, 128, 0.615);
+    /*border: solid 5px purple;*/
+    transition: 2s;
+
 }
 
 .carte_titre{
     position: relative;
     height: 150px;
     overflow: hidden;
+    border-radius:  20px 20px 0px 0px;
+    /*border: solid 3px yellow;*/
+}
+
+.carte_avant{
+    /*position: absolute;*/
+    height: 100%;
+    width: 100%;
+    border: solid 5px red;
+}
+
+.carte_avant:hover{
+    cursor: pointer;
+    transform: rotateY(180deg);
+}
+
+.carte_arriere{
+    /*position: absolute;*/
+    height: 100%;
+    width: 100%;
+    border: solid 5px green;
+    transform: rotateY(180deg);
 }
 
 .carte_titre img{
     width:100%;
     height: 100%;
     object-fit: cover;
-    /* object-position: center; si elle sont pas identique en taille */
-    transition: 0.5s;
 }
 
-.card_texte{
-    background:rgba(128, 128, 128, 0.615);
-    text-align: justify;
-    padding:30px/*marge interne*/
+.carte_texte{
+    /*text-align: justify;*/
+    padding:0 15px;/*marge interne*/
+    /*border: solid 3px green;*/
 }
-.card_texte h1{
+.carte_texte h1{
     margin-bottom: 5px;/* ecrat du titre par rapport au texte */
     font-style: 25px;
     font-weight: 700;
