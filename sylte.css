@@ -245,3 +245,52 @@ body {
 }
 
 /* site web  */
+#container { /* le conteneur*/
+    padding:20px;
+    min-height:100vh; /* 100% du conteneur*/
+    display:flex; /*une carte a coter de l'autre*/
+    flex-wrap: wrap;/* permet d'adapter à la taille de l'écran seulement si display est flex sinon marche pas*/ 
+    justify-content: center;/* alignement horizontal*/
+    align-items: center;/* alignement vertical*/
+    gap: 10px;/* écart entre card*/
+    /*background: rgba(9, 91, 207, 0.966);/* couleur de fond*/
+}
+.carte{
+    width: 250px;
+    height: 350px;
+    color: aliceblue;
+    /*border:5px solid rgb(226, 66, 114);  enlever à la fin*/
+    border-radius: 20px;/* arrondi des anglles si 500 % cela fait un rond*/
+    overflow: hidden; /* permet de masquer tout ce qui "déborde" de la carte */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; /* ombre portée sur la carte */
+}
+
+.carte_titre{
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}
+
+.carte_titre img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    /* object-position: center; si elle sont pas identique en taille */
+    transition: 0.5s;
+}
+
+.card_texte{
+    background:rgba(128, 128, 128, 0.615);
+    text-align: justify;
+    padding:30px/*marge interne*/
+}
+.card_texte h1{
+    margin-bottom: 5px;/* ecrat du titre par rapport au texte */
+    font-style: 25px;
+    font-weight: 700;
+}
+
+.card_texte p {
+    font-size: 14px;
+    font-weight: 300;
+}
