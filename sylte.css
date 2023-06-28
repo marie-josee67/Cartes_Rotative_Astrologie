@@ -245,7 +245,70 @@ body {
 }
 
 /* site web  */
+
 #container { 
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
+
+.carte{
+  display: flex;
+  flex-wrap: wrap;
+  width: 250px;
+  height: 350px;
+  background: rgba(128, 128, 128, 0.739);
+  border-radius: 20px;
+  gap:20px 10px; /* écart entre les cartes */
+  overflow: hidden;/* cache se qui dépasse */
+  margin: 20px;
+  /*border:solid 5px red;*/
+}
+
+.carte_avant{
+  height: 100%;
+  width: 100%;
+  border:solid 5px purple;
+  transition: 2s;
+  perspective: 800px;
+}
+
+.carte_avant:hover{
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+.carte_titre img{
+  height: 150px;
+  width: 100%;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.carte_texte{
+  color:aliceblue;
+  text-align: justify;
+  margin: 10px;
+}
+
+.carte_texte h1{
+  font-size: 40px;
+  text-align: center;
+  border: solid 3px rgb(180, 183, 6);
+
+}
+
+.carte_texte p{
+  font-size: 16px;
+  margin: 10px;
+  border: solid 3px green;
+}
+
+.carte_arriere{
+  height: 100%;
+  width: 100%;
+  margin: 10px;
+  border: solid 5px rgb(116, 24, 8);
+}
+
+/*.carte_arriere:hover{
+  transform: rotateY(180deg);
+}*/
