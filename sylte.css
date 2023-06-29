@@ -247,13 +247,12 @@ body {
 /* site web  */
 
 #container { 
-  height: 100%;
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh; /* hauteur de page minimum */
 }
 
 .carte{
-  display: flex;
-  flex-wrap: wrap;
   width: 250px;
   height: 350px;
   background: rgba(128, 128, 128, 0.739);
