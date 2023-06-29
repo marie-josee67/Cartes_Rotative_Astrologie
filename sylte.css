@@ -1,6 +1,12 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    /*height: 100vh;*/
+    height: 100vh;
     font-weight: 100;
     background: radial-gradient(#290367,#1f1013);
     overflow-Y: hidden;
@@ -255,12 +261,24 @@ body {
 #container { 
   display: flex;
   flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
   min-height: 100vh; /* hauteur de page minimum */
+  perspective: 800px;
+ 
+}
+
+.carte:hover{ /* .container:hover >.card  ==> le container plus la card*/
+  cursor: pointer; /* quand le curseur passe dessus */
+  transform: rotateY(180deg), rotateZ(180deg);
 }
 
 .carte{
   width: 250px;
   height: 350px;
+  position: relative;
+  transition: transform 1.5s; /* temps de rotation */
+  transform-style: preserve-3d;/* permet de voir ainsi les deux coter */
   background: rgba(128, 128, 128, 0.739);
   border-radius: 20px;
   gap:20px 10px; /* écart entre les cartes */
@@ -269,17 +287,16 @@ body {
   /*border:solid 5px red;*/
 }
 
-.carte_avant{
+/* L'avant et l'arrière de la carte */
+.carte_avant,
+.carte_arriere{
   height: 100%;
   width: 100%;
-  border:solid 5px purple;
-  transition: 2s;
-  perspective: 800px;
-}
-
-.carte_avant:hover{
-  cursor: pointer;
-  transform: rotateY(180deg);
+  border-radius: 20px;
+  box-shadow: 0 0 5px 2px rgba(22, 110, 198, 0.512);
+  position: absolute;
+  backface-visibility: hidden;
+  border: solid 5px red;
 }
 
 .carte_titre img{
@@ -298,7 +315,6 @@ body {
   font-size: 40px;
   text-align: center;
   border: solid 3px rgb(180, 183, 6);
-
 }
 
 .carte_texte p{
@@ -308,10 +324,27 @@ body {
 }
 
 .carte_arriere{
-  height: 100%;
+  background-color: #a09898;
+  transform: rotateY(180deg), rotateZ(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:5rem; /* écran entre le titre et le paragraphe */
+  padding:20px;
+  text-align: justify;
+}
+
+.carte_arriere p{
   width: 100%;
-  margin: 10px;
-  border: solid 5px rgb(116, 24, 8);
+  height: 100%;
+  color:aliceblue;
+  font-size: 16px;
+  text-align: left;
+  text-justify: auto;
+  margin:0;
+  gap:0; /* écarte de gouttière entre les lignes et les colonnes */
+  /*border: solid 5px orchid;*/
 }
 
 /*.carte_arriere:hover{
