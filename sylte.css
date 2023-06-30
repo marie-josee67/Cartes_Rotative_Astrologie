@@ -268,11 +268,6 @@ body {
  
 }
 
-.carte:hover{ /* .container:hover >.card  ==> le container plus la card*/
-  cursor: pointer; /* quand le curseur passe dessus */
-  transform: rotateY(180deg), rotateZ(180deg);
-}
-
 .carte{
   width: 250px;
   height: 350px;
@@ -285,6 +280,13 @@ body {
   overflow: hidden;/* cache se qui dépasse */
   margin: 20px;
   /*border:solid 5px red;*/
+}
+
+.carte:hover > .carte{ /* .container:hover >.card  ==> le container plus la card*/
+  cursor: pointer; /* quand le curseur passe dessus */
+  z-index: 1; /* mise en avant sur les autres éléments */
+  zoom: normal;
+  transform: rotateY(180deg) rotateZ(180deg);
 }
 
 /* L'avant et l'arrière de la carte */
@@ -325,11 +327,11 @@ body {
 
 .carte_arriere{
   background-color: #a09898;
-  transform: rotateY(180deg), rotateZ(180deg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transform: rotateY(180deg) rotateZ(180deg);
   gap:5rem; /* écran entre le titre et le paragraphe */
   padding:20px;
   text-align: justify;
@@ -347,6 +349,7 @@ body {
   /*border: solid 5px orchid;*/
 }
 
-/*.carte_arriere:hover{
-  transform: rotateY(180deg);
-}*/
+/* a mettre en commentaire */
+.carte_arriere:hover{
+  transform: rotateY(180deg), rotateZ(180deg)
+}
