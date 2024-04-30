@@ -4,8 +4,16 @@
   box-sizing: border-box;
 }
 
-#container{
+#container { 
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /*height: 100%; /* hauteur de page minimum */
+  perspective: 800px;
+  margin: 10px;
+  gap: 15px;
   /*border: 2px solid red;*/
 }
 
@@ -278,30 +286,16 @@ main {
 
 /* site web  */
 
-#container { 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%; /* hauteur de page minimum */
-  perspective: 800px;
- 
-  margin: 10px;
-  gap: 15px;
- 
-}
-
 .carte{
   position:relative;
-  width: 250px;
-  height: 350px;
+  width: 280px;
+  height: 450px;
   transition: transform 1.5s; /* temps de rotation */
   transform-style: preserve-3d;/* permet que le texte est dans le bon sens*/
   background: rgba(128, 128, 128, 0.739);
   border-radius: 20px;
   gap:20px 10px; /* écart entre les cartes */
-  overflow: hidden;/* cache se qui dépasse */
+  /*overflow: hidden;/* cache se qui dépasse */
   margin: 20px;
   /*border:solid 5px red;*/
 }
@@ -323,8 +317,9 @@ main {
   /*border: solid 5px red;*/
 }
 
+/* *********************** Avant des cartes astro ***************************** */
 .carte_titre img{
-  height: 150px;
+  height: 200px;
   width: 100%;
   border-radius: 20px 20px 0px 0px;
 }
@@ -347,6 +342,8 @@ main {
   /*border: solid 3px green;*/
 }
 
+
+/* *********************** Arrière des cartes astro ***************************** */
 .carte_arriere{
   background-color: #a09898;
   display: flex;
@@ -355,18 +352,19 @@ main {
   align-items: center;
   transform: rotateY(180deg) rotateZ(180deg);
   gap:5rem; /* écran entre le titre et le paragraphe */
-  padding:20px;
-  text-align: justify;
+  padding:10px;
+  /*border: 2px solid red;*/
 }
 
 .carte_arriere p{
   width: 100%;
   height: 100%;
   color:aliceblue;
+  display: flex;
+  align-items: center;
   font-size: 16px;
-  text-align: left;
+  text-align: justify;
   text-justify: auto;
-  margin:0;
   gap:0; /* écarte de gouttière entre les lignes et les colonnes */
   /*border: solid 5px orchid;*/
 }
