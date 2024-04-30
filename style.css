@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  /*height: 100%; /* hauteur de page minimum */
+  /*min-height: 100%; /* hauteur de page minimum */
   perspective: 800px;
   margin: 10px;
   gap: 15px;
@@ -50,7 +50,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px dashed green;
+    /*border: 2px dashed green;*/
 }
 
 /*backgroung du site web */
